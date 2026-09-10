@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+
+  body {
+    background-color: #020712;
+    color: #e2e8f0;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Aquatic Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #020712;
+}
+::-webkit-scrollbar-thumb {
+  background: #0e3758;
+  border-radius: 9999px;
+  border: 2px solid #020712;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #06b6d4;
+}
+
+/* Underwater Glow & Caustic Utilities */
+.glow-cyan {
+  box-shadow: 0 0 35px -5px rgba(6, 182, 212, 0.35);
+}
+
+.glow-cyan-sm {
+  box-shadow: 0 0 20px -3px rgba(6, 182, 212, 0.25);
+}
+
+.glow-text-cyan {
+  text-shadow: 0 0 20px rgba(34, 211, 238, 0.6), 0 0 40px rgba(6, 182, 212, 0.3);
+}
+
+.glow-box-blue {
+  box-shadow: 0 8px 32px 0 rgba(2, 22, 49, 0.7), 0 0 0 1px rgba(14, 165, 233, 0.15);
+}
+
+.glow-box-blue:hover {
+  box-shadow: 0 12px 40px 0 rgba(6, 182, 212, 0.2), 0 0 0 1px rgba(34, 211, 238, 0.4);
+}
+
+/* Deep sea glassmorphism */
+.glass-deep-sea {
+  background: rgba(4, 19, 38, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(34, 211, 238, 0.12);
+}
+
+.glass-deep-sea-hover:hover {
+  background: rgba(6, 28, 56, 0.8);
+  border-color: rgba(34, 211, 238, 0.35);
+}
+
+/* Water Caustics / Light Rays */
+@keyframes causticShift {
+  0% {
+    transform: translateY(-10%) rotate(0deg) scale(1);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translateY(5%) rotate(3deg) scale(1.1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-10%) rotate(0deg) scale(1);
+    opacity: 0.25;
+  }
+}
+
+.animate-caustics {
+  animation: causticShift 14s ease-in-out infinite alternate;
+}
+
+/* Floating Underwater Pulse */
+@keyframes underwaterFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0.8deg);
+  }
+}
+
+.animate-float {
+  animation: underwaterFloat 6s ease-in-out infinite;
+}
+
+/* Sonar Wave Ripple */
+@keyframes sonarPing {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+.animate-sonar {
+  animation: sonarPing 3.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}

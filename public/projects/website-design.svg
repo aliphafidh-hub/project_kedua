@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020a17"/>
+      <stop offset="50%" stop-color="#041830"/>
+      <stop offset="100%" stop-color="#020d1c"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#072242" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#031326" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle Grid -->
+  <g opacity="0.08" stroke="#38bdf8" stroke-width="1">
+    <line x1="0" y1="75" x2="1200" y2="75"/>
+    <line x1="0" y1="150" x2="1200" y2="150"/>
+    <line x1="0" y1="225" x2="1200" y2="225"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="375" x2="1200" y2="375"/>
+    <line x1="0" y1="450" x2="1200" y2="450"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="0" y1="600" x2="1200" y2="600"/>
+    <line x1="150" y1="0" x2="150" y2="675"/>
+    <line x1="300" y1="0" x2="300" y2="675"/>
+    <line x1="450" y1="0" x2="450" y2="675"/>
+    <line x1="600" y1="0" x2="600" y2="675"/>
+    <line x1="750" y1="0" x2="750" y2="675"/>
+    <line x1="900" y1="0" x2="900" y2="675"/>
+    <line x1="1050" y1="0" x2="1050" y2="675"/>
+  </g>
+
+  <!-- Top Website Browser Bar -->
+  <rect x="50" y="35" width="1100" height="52" rx="14" fill="#03152b" stroke="#0e3a66" stroke-width="1.5"/>
+  <circle cx="85" cy="61" r="6" fill="#ef4444"/>
+  <circle cx="107" cy="61" r="6" fill="#f59e0b"/>
+  <circle cx="129" cy="61" r="6" fill="#10b981"/>
+  <rect x="220" y="47" width="560" height="28" rx="8" fill="#020b17" stroke="#0e3a66" stroke-width="1"/>
+  <text x="250" y="66" fill="#38bdf8" font-family="'Outfit', sans-serif" font-size="13" font-weight="500">https://modernwebsite.design/agency</text>
+  <rect x="940" y="48" width="85" height="26" rx="6" fill="url(#cyanGrad)"/>
+  <text x="982" y="65" fill="#020a17" font-family="'Outfit', sans-serif" font-size="11" font-weight="700" text-anchor="middle">CONTACT</text>
+
+  <!-- Website Hero Layout -->
+  <!-- Ambient background glow behind hero -->
+  <circle cx="340" cy="270" r="180" fill="#06b6d4" opacity="0.12" filter="url(#glow)"/>
+  <circle cx="920" cy="340" r="160" fill="#3b82f6" opacity="0.15" filter="url(#glow)"/>
+
+  <!-- Hero Content Left -->
+  <rect x="90" y="140" width="180" height="28" rx="14" fill="#062544" stroke="#0284c7" stroke-width="1"/>
+  <text x="180" y="159" fill="#38bdf8" font-family="'Outfit', sans-serif" font-size="12" font-weight="600" text-anchor="middle">✨ CREATIVE WEB AGENCY</text>
+
+  <text x="90" y="235" fill="#ffffff" font-family="'Outfit', sans-serif" font-size="44" font-weight="800">Transforming Brands</text>
+  <text x="90" y="285" fill="url(#cyanGrad)" font-family="'Outfit', sans-serif" font-size="44" font-weight="800">Through Modern Web.</text>
+
+  <text x="90" y="335" fill="#94a3b8" font-family="'Outfit', sans-serif" font-size="15" font-weight="400">Desain website profesional, cepat, responsif, dan berorientasi pada konversi bisnis.</text>
+  <text x="90" y="360" fill="#94a3b8" font-family="'Outfit', sans-serif" font-size="15" font-weight="400">Membantu bisnis meningkatkan kredibilitas digital dengan teknologi web masa kini.</text>
+
+  <!-- CTA Buttons -->
+  <rect x="90" y="395" width="170" height="46" rx="12" fill="url(#cyanGrad)"/>
+  <text x="175" y="424" fill="#020b17" font-family="'Outfit', sans-serif" font-size="14" font-weight="700" text-anchor="middle">Mulai Proyek ➔</text>
+
+  <rect x="280" y="395" width="150" height="46" rx="12" fill="#041d38" stroke="#0e3a66" stroke-width="1.5"/>
+  <text x="355" y="424" fill="#e2e8f0" font-family="'Outfit', sans-serif" font-size="14" font-weight="600" text-anchor="middle">Lihat Portofolio</text>
+
+  <!-- Stats Strip -->
+  <g transform="translate(90, 480)">
+    <text x="0" y="30" fill="#ffffff" font-family="'Outfit', sans-serif" font-size="28" font-weight="800">120+</text>
+    <text x="0" y="52" fill="#64748b" font-family="'Outfit', sans-serif" font-size="12">Web Completed</text>
+
+    <text x="140" y="30" fill="#38bdf8" font-family="'Outfit', sans-serif" font-size="28" font-weight="800">99.8%</text>
+    <text x="140" y="52" fill="#64748b" font-family="'Outfit', sans-serif" font-size="12">Client Satisfaction</text>
+
+    <text x="290" y="30" fill="#10b981" font-family="'Outfit', sans-serif" font-size="28" font-weight="800">&lt; 0.8s</text>
+    <text x="290" y="52" fill="#64748b" font-family="'Outfit', sans-serif" font-size="12">Page Load Speed</text>
+  </g>
+
+  <!-- Right Visual Cards (Showcase Showcase) -->
+  <g transform="translate(680, 130)">
+    <!-- Card 1: Main Feature -->
+    <rect x="0" y="0" width="440" height="260" rx="20" fill="url(#cardGrad)" stroke="#0e3a66" stroke-width="1.5"/>
+    <rect x="25" y="25" width="390" height="130" rx="12" fill="#020f21" stroke="#062544" stroke-width="1"/>
+    
+    <!-- Mini layout inside card -->
+    <rect x="45" y="45" width="120" height="14" rx="4" fill="#0284c7"/>
+    <rect x="45" y="70" width="200" height="8" rx="3" fill="#1e3a5f"/>
+    <rect x="45" y="85" width="160" height="8" rx="3" fill="#1e3a5f"/>
+    <circle cx="340" cy="90" r="35" fill="#0369a1" opacity="0.4"/>
+    
+    <text x="25" y="195" fill="#ffffff" font-family="'Outfit', sans-serif" font-size="17" font-weight="700">Responsive Company Profile &amp; Landing Page</text>
+    <text x="25" y="220" fill="#94a3b8" font-family="'Outfit', sans-serif" font-size="12">Optimal di desktop, tablet, dan smartphone dengan performa SEO terbaik.</text>
+
+    <!-- Mini Sub-cards below -->
+    <rect x="0" y="280" width="210" height="150" rx="16" fill="url(#cardGrad)" stroke="#0e3a66" stroke-width="1.5"/>
+    <circle cx="40" cy="315" r="16" fill="#0284c7" opacity="0.3"/>
+    <text x="40" y="320" fill="#38bdf8" font-family="'Outfit', sans-serif" font-size="14" font-weight="bold" text-anchor="middle">⚡</text>
+    <text x="70" y="320" fill="#ffffff" font-family="'Outfit', sans-serif" font-size="14" font-weight="700">Ultra Fast Speed</text>
+    <text x="25" y="360" fill="#94a3b8" font-family="'Outfit', sans-serif" font-size="11">Didesain dengan clean code dan optimasi aset modern.</text>
+
+    <rect x="230" y="280" width="210" height="150" rx="16" fill="url(#cardGrad)" stroke="#0e3a66" stroke-width="1.5"/>
+    <circle cx="270" cy="315" r="16" fill="#10b981" opacity="0.3"/>
+    <text x="270" y="320" fill="#34d399" font-family="'Outfit', sans-serif" font-size="14" font-weight="bold" text-anchor="middle">🎨</text>
+    <text x="300" y="320" fill="#ffffff" font-family="'Outfit', sans-serif" font-size="14" font-weight="700">Custom Aesthetic</text>
+    <text x="255" y="360" fill="#94a3b8" font-family="'Outfit', sans-serif" font-size="11">Desain eksklusif disesuaikan dengan identitas brand klien.</text>
+  </g>
+
+  <!-- Bottom Accent bar -->
+  <rect x="0" y="665" width="1200" height="10" fill="url(#cyanGrad)"/>
+</svg>
