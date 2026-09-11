@@ -10,9 +10,9 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ onExplorePortfolio, onContactClick }) => {
   const roles = [
     'Web Developer',
-    'Frontend Specialist',
+    'Frontend Mid-Level Engineer',
     'UI/UX Enthusiast',
-    'Clean Code Enthusiast',
+    'Web Analyst',
   ];
 
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
