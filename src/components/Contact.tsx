@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
+import emailjs from '@emailjs/browser';
 import { Send, Mail, MapPin, Clock, MessageSquare, CheckCircle2, MessageCircle } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, InstagramIcon } from './SocialIcons';
-
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -15,37 +15,55 @@ export const Contact: React.FC = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
 
     setIsSubmitting(true);
+    setErrorMessage('');
 
-    // Simulate sending message
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
+    // --- KONFIGURASI EMAILJS ANDA ---
+    const serviceID = 'service_5piedwq'
+    const templateID = 'template_5wbuee8';
+    const publicKey = 'wFxslKYxg6CaZq0lQ';
 
-      // Trigger celebration confetti
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 },
-        colors: ['#22d3ee', '#06b6d4', '#38bdf8', '#ffffff'],
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      subject: formData.subject || 'Tanpa Subjek',
+      message: formData.message,
+    };
+
+    emailjs.send(serviceID, templateID, templateParams, publicKey)
+      .then(() => {
+        setIsSubmitting(false);
+        setIsSuccess(true);
+
+        // Trigger konfeti perayaan
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 },
+          colors: ['#22d3ee', '#06b6d4', '#38bdf8', '#ffffff'],
+        });
+
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+
+        setTimeout(() => setIsSuccess(false), 6000);
+      })
+      .catch((error) => {
+        console.error('Gagal mengirim email:', error);
+        setIsSubmitting(false);
+        setErrorMessage('Terjadi kesalahan saat mengirim pesan. Coba beberapa saat lagi.');
       });
-
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-      });
-
-      // Clear success notification after 6 seconds
-      setTimeout(() => setIsSuccess(false), 6000);
-    }, 1200);
   };
 
   return (
@@ -84,7 +102,7 @@ export const Contact: React.FC = () => {
           </motion.p>
         </div>
 
-        {/* 2-Column Grid matching reference */}
+        {/* 2-Column Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           {/* Left Card: Contact Information */}
           <motion.div
@@ -109,7 +127,7 @@ export const Contact: React.FC = () => {
                   <div>
                     <span className="text-[11px] text-slate-400 block font-medium">Email Resmi</span>
                     <a href="mailto:aliphafidh@gmail.com" className="text-sm font-semibold text-white hover:text-cyan-300 transition-colors">
-                      aliphafidh@gmail.com 
+                      aliphafidh@gmail.com
                     </a>
                   </div>
                 </div>
@@ -153,7 +171,6 @@ export const Contact: React.FC = () => {
                   { icon: MessageCircle, label: 'WhatsApp', href: 'https://wa.me//6285807223327' },
                   { icon: InstagramIcon, label: 'Instagram', href: 'https://www.instagram.com/itsall_1?stkn=MWJ4amc4NGU5dzdhZQ==' },
                 ].map((item, idx) => {
-
                   const Icon = item.icon;
                   return (
                     <a
@@ -193,8 +210,15 @@ export const Contact: React.FC = () => {
                 className="mb-6 p-4 rounded-2xl bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 flex items-center gap-3 text-xs sm:text-sm"
               >
                 <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
-                <span>Terima kasih! Pesan Anda telah terkirim. Saya akan segera menghubungi Anda.</span>
+                <span>Pesan berhasil dikirim! Silakan cek kotak masuk Gmail Anda.</span>
               </motion.div>
+            )}
+
+            {/* Error Alert */}
+            {errorMessage && (
+              <div className="mb-6 p-4 rounded-2xl bg-red-950/60 border border-red-500/40 text-red-300 text-xs sm:text-sm">
+                {errorMessage}
+              </div>
             )}
 
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -267,7 +291,7 @@ export const Contact: React.FC = () => {
                 {isSubmitting ? (
                   <>
                     <div className="w-4 h-4 border-2 border-cyan-950 border-t-transparent rounded-full animate-spin" />
-                    <span>Sedang Mengirim Pesan...</span>
+                    <span>Mengirim Pesan...</span>
                   </>
                 ) : (
                   <>
