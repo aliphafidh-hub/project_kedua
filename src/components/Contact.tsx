@@ -25,11 +25,18 @@ export const Contact: React.FC = () => {
     setErrorMessage('');
 
     // --- KONFIGURASI EMAILJS ANDA ---
-    const serviceID = 'service_5piedwq'
-    const templateID = 'template_5wbuee8';
-    const publicKey = 'wFxslKYxg6CaZq0lQ';
+    const serviceID = 'service_s2sl73a'
+    const templateID = 'template_1y0wlj9';
+    const publicKey = 'TKgnRF6BuPOUSU8R9';
 
     const templateParams = {
+      // Parameter utama untuk template EmailJS
+      to_name: 'alip',
+      to_email: 'youabout125@gmail.com',
+      from_name: formData.name,
+      from_email: formData.email,
+      reply_to: formData.email,
+      // Untuk kompatibilitas dengan template lama
       name: formData.name,
       email: formData.email,
       subject: formData.subject || 'Tanpa Subjek',
@@ -210,7 +217,7 @@ export const Contact: React.FC = () => {
                 className="mb-6 p-4 rounded-2xl bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 flex items-center gap-3 text-xs sm:text-sm"
               >
                 <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
-                <span>Pesan berhasil dikirim! Silakan cek kotak masuk Gmail Anda.</span>
+                <span>Pesan berhasil dikirim! Terima kasih telah menghubungi saya. Saya akan segera menghubungi Anda kembali.</span>
               </motion.div>
             )}
 
